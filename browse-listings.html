@@ -8,7 +8,7 @@
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
-    <link href="/assets/css/style.css" rel="stylesheet" />
+    <link href="./assets/css/style.css" rel="stylesheet" />
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <style>
       :root {
@@ -42,7 +42,7 @@
         <a href="/">
           <div class="flex items-center gap-3">
             <img
-              src="/assets/images/Bhorosha Logo.png"
+              src="./assets/images/Bhorosha Logo.png"
               alt="Bhorosha Logo"
               class="h-12 w-auto max-h-14"
             />
@@ -215,7 +215,7 @@
           .map(
             (listing) => `
       <div class="bg-white shadow-lg rounded-xl overflow-hidden border border-gray-200 hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
-  <img src="/assets/images/${listing.img}" alt="Land" class="w-full h-48 object-cover rounded-t-xl" />
+  <img src="./assets/images/${listing.img}" alt="Land" class="w-full h-48 object-cover rounded-t-xl" />
   <div class="p-6">
     <h3 class="text-xl font-semibold text-[var(--deep-green)] mb-2">${listing.location}</h3>
     <p class="text-sm text-gray-600 mt-1">Land Size: <strong>${listing.size} Acre</strong></p>
