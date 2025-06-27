@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bhorosha Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+      :root {
+        --deep-green: #1b5e20;
+        --light-green: #66bb6a;
+        --lightest-green: #a5d6a7;
+        --dark-green: #388e3c;
+        --bg-color: #f1f8e9;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        font-family: "Roboto", sans-serif;
+        color: var(--dark-green);
+      }
+
+      .text-deep-green {
+        color: var(--deep-green);
+      }
+
+      .bg-deep-green {
+        background-color: var(--deep-green);
+      }
+
+      .bg-light-green {
+        background-color: var(--light-green);
+      }
+
+      .text-light-green {
+        color: var(--light-green);
+      }
+
+      .action-card {
+        background-color: var(--light-green);
+        color: var(--deep-green);
+        transition: all 0.3s ease-in-out;
+        border-radius: 10px;
+        padding: 16px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%; /* Add this line */
+      }
+
+      .action-card:hover {
+        background-color: #81c784;
+        transform: scale(1.05);
+      }
+
+      .icon-box {
+        font-size: 2rem;
+        color: var(--deep-green);
+        transition: color 0.3s ease;
+      }
+
+      .action-card:hover .icon-box {
+        color: white;
+      }
+
+      .action-label {
+        font-size: 0.85rem;
+        font-weight: 500;
+        margin-top: 8px;
+        color: var(--deep-green);
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 16px;
+      }
+
+      @media (min-width: 1024px) {
+        .grid-container {
+          grid-template-columns: repeat(6, 1fr);
+        }
+      }
+
+      .card-wrapper {
+        background: var(--lightest-green);
+        padding: 1rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .news-item {
+        display: flex;
+        gap: 16px;
+        padding: 16px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease-in-out;
+      }
+
+      .news-item:hover {
+        background-color: #e8f5e9;
+      }
+
+      .news-item img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      .news-item .news-content h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--deep-green);
+      }
+
+      .news-item .news-content p {
+        font-size: 0.85rem;
+        color: #555;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main
+      class="relative mx-auto px-4 sm:px-8 md:px-16 lg:px-24 py-8 max-w-5xl"
+    >
+      <div class="absolute inset-x-0 top-0 -z-10">
+        <svg
+          viewBox="0 0 1440 320"
+          class="w-full h-40 md:h-48 lg:h-56"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill="#1b5e20"
+            fill-opacity="0.2"
+            d="M0,160L48,144C96,128,192,96,288,90.7C384,85,480,107,576,117.3C672,128,768,128,864,117.3C960,107,1056,85,1152,101.3C1248,117,1344,171,1392,197.3L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+          ></path>
+        </svg>
+      </div>
+
+      <!-- Your existing content starts here -->
+      <div
+        class="text-center text-deep-green text-md sm:text-3xl font-semibold mb-10"
+      >
+        Welcome, Shahoriar
+      </div>
+
+      <a
+        href="index.html"
+        class="absolute top-7 left-4 z-20 p-3 flex justify-center rounded-full bg-deep-green text-white hover:bg-dark-green transition transform hover:scale-105"
+      >
+        <i class="ph ph-arrow-left text-lg"></i>
+      </a>
+
+      <!-- Stats Section -->
+      <div class="grid grid-cols-3 gap-4 text-center mb-8 text-white text-sm">
+        <div class="bg-deep-green rounded-xl p-6">
+          <div class="font-bold text-md">200+</div>
+          <p class="text-sm pt-1">Dealings</p>
+        </div>
+        <div class="bg-deep-green rounded-xl p-6">
+          <div class="font-bold text-md">20%</div>
+          <p class="text-sm pt-1">Avg. Earning ↑</p>
+        </div>
+        <div class="bg-deep-green rounded-xl p-6">
+          <div class="font-bold text-md">20 Bigha</div>
+          <p class="text-sm pt-1">Total Leased</p>
+        </div>
+      </div>
+
+      <!-- Hero Farmer Section -->
+      <div
+        class="relative rounded-xl overflow-hidden w-full max-h-[400px] mb-8"
+      >
+        <img
+          src="/assets/images/dashboardFarmer.png"
+          alt="Farmer"
+          class="w-full h-full object-cover"
+        />
+      </div>
+
+      <!-- Feature Quick Actions -->
+      <section id="feature-quick-actions" class="mb-10">
+        <h2 class="text-xl font-semibold mb-4 text-deep-green">
+          🚀 Quick Actions
+        </h2>
+        <div
+          class="grid-container grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6"
+        >
+          <a href="/browse-listings.html">
+            <div class="card-wrapper">
+              <div class="action-card">
+                <i class="ph ph-magnifying-glass icon-box"></i>
+                <div class="action-label">Browse Listings</div>
+              </div>
+            </div>
+          </a>
+          <a href="#land-requests">
+            <div class="card-wrapper">
+              <div class="action-card">
+                <i class="ph ph-map-pin-line icon-box"></i>
+                <div class="action-label">Land Requests</div>
+              </div>
+            </div>
+          </a>
+          <a href="#saved-lands">
+            <div class="card-wrapper">
+              <div class="action-card">
+                <i class="ph ph-bookmark-simple icon-box"></i>
+                <div class="action-label">Saved Lands</div>
+              </div>
+            </div>
+          </a>
+          <a href="#agriculture-news">
+            <div class="card-wrapper">
+              <div class="action-card">
+                <i class="ph ph-newspaper icon-box"></i>
+                <div class="action-label">Current News</div>
+              </div>
+            </div>
+          </a>
+          <a href="#land-converter">
+            <div class="card-wrapper">
+              <div class="action-card">
+                <i class="ph ph-ruler icon-box"></i>
+                <div class="action-label">Land Converter</div>
+              </div>
+            </div>
+          </a>
+          <a href="#faq">
+            <div class="card-wrapper">
+              <div class="action-card">
+                <i class="ph ph-question icon-box"></i>
+                <div class="action-label">FAQ</div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- News Section -->
+      <section id="agriculture-news" class="mb-10">
+        <h2
+          class="text-deep-green font-bold text-xl md:text-3xl mb-8 flex items-center gap-3"
+        >
+          <i class="ph ph-newspaper text-xl md:text-3xl"></i>
+          Latest Agriculture News & Insights
+        </h2>
+        <p class="text-gray-700 max-w-3xl mb-6">
+          Stay updated with the latest news, trends, and expert insights on
+          sustainable farming, climate-smart agriculture, and innovations
+          transforming Bangladesh’s agriculture sector.
+        </p>
+        <div class="space-y-6">
+          <a
+            href="https://www.dailyjanakantha.com/opinion/news/775257?utm_source=chatgpt.com"
+            target="_blank"
+            class="news-item hover:shadow-lg"
+          >
+            <img
+              src="https://www.dailyjanakantha.com/media/imgAll/2024April/9-2502221407.jpg"
+              alt="Janakantha News"
+            />
+            <div class="news-content">
+              <h3 class="text-xl font-semibold text-deep-green">
+                দাকাহিক কৃষি দিবস শিল্প চাষা এবং সমাস্যের চিরান
+              </h3>
+              <p class="text-green-700 font-semibold">dailyjanakantha.com</p>
+              <p class="text-gray-600 mt-1 text-sm max-w-lg">
+                A comprehensive discussion on the challenges and opportunities
+                facing agricultural producers during the National Agriculture
+                Day.
+              </p>
+            </div>
+          </a>
+
+          <a
+            href="https://thefinancialexpress.com.bd/views/columns/potential-of-climate-smart-agriculture-in-southern-bangladesh"
+            target="_blank"
+            class="news-item hover:shadow-lg"
+          >
+            <img
+              src="https://tfe-bd.sgp1.cdn.digitaloceanspaces.com/posts/102126/1647351535.jpg"
+              alt="Climate Smart Agriculture"
+            />
+            <div class="news-content">
+              <h3 class="text-xl font-semibold text-deep-green">
+                Potential of Climate-Smart Agriculture in Southern Bangladesh
+              </h3>
+              <p class="text-green-700 font-semibold">
+                thefinancialexpress.com.bd
+              </p>
+              <p class="text-gray-600 mt-1 text-sm max-w-lg">
+                Exploring sustainable farming practices that help farmers adapt
+                to climate change while increasing productivity and resilience.
+              </p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section id="land-requests" class="mb-10">
+        <div
+          class="bg-white rounded-xl p-4 md:p-8 shadow-md space-y-4 max-w-5xl mx-auto"
+        >
+          <div
+            class="flex items-center gap-3 text-deep-green font-bold text-2xl mb-2"
+          >
+            <i class="ph ph-map-pin-line text-4xl"></i>
+            <span>Land Requests</span>
+          </div>
+          <p class="text-gray-700 text-base leading-relaxed">
+            Tell us about the land you need—whether for farming, leasing, or
+            other agricultural purposes. Our platform connects land seekers with
+            trusted landowners across Bangladesh, making the process seamless
+            and secure.
+          </p>
+          <ul class="list-disc list-inside text-gray-600 mb-4">
+            <li>Specify land size, location, and purpose</li>
+            <li>Get notified when matching listings become available</li>
+            <li>Track the status of your requests in real-time</li>
+          </ul>
+          <button
+            class="w-full py-3 rounded-md text-white font-semibold bg-light-green hover:bg-dark-green transition transform hover:scale-105"
+            aria-label="Request Land"
+          >
+            Request Land Now
+          </button>
+        </div>
+      </section>
+
+      <section id="saved-lands" class="mb-10">
+        <div
+          class="bg-white rounded-xl p-4 md:p-8 shadow-md max-w-5xl mx-auto space-y-4"
+        >
+          <div
+            class="flex items-center gap-3 text-deep-green font-bold text-2xl"
+          >
+            <i class="ph ph-bookmark-simple text-4xl"></i>
+            <span>Saved Lands</span>
+          </div>
+          <p class="text-gray-700 text-base leading-relaxed">
+            Your favorite land listings are saved here for quick access. Review
+            details, compare options, and manage your shortlisted lands anytime.
+          </p>
+          <ul class="list-disc list-inside text-gray-600">
+            <li>
+              <strong>2 Bigha</strong> - Gazipur, fertile soil with irrigation
+              facilities
+            </li>
+            <li>
+              <strong>3 Katha</strong> - Mymensingh, perfect for vegetable
+              farming
+            </li>
+            <li>
+              <strong>1 Acre</strong> - Rangpur, well-connected to local markets
+            </li>
+          </ul>
+          <button
+            class="w-full py-3 rounded-md text-white font-semibold bg-light-green hover:bg-dark-green transition transform hover:scale-105 mt-4"
+            aria-label="View Saved Lands"
+          >
+            Manage Saved Lands
+          </button>
+        </div>
+      </section>
+
+      <section id="land-converter" class="mb-10">
+        <div
+          class="bg-white rounded-xl p-4 md:p-8 shadow-md max-w-5xl mx-auto space-y-5"
+        >
+          <div
+            class="flex items-center gap-3 text-deep-green font-bold text-2xl"
+          >
+            <i class="ph ph-ruler text-4xl"></i>
+            <span>Land Unit Converter</span>
+          </div>
+          <p class="text-gray-700 text-base leading-relaxed">
+            Easily convert between common land measurement units used in
+            Bangladesh. Simply enter a value and select the unit to see
+            equivalent measurements instantly.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <input
+              id="land-value"
+              type="number"
+              min="0"
+              placeholder="Enter value"
+              class="flex-1 min-w-[160px] px-4 py-3 border border-green-300 rounded-md focus:outline-none focus:ring-2 focus:ring-light-green"
+            />
+            <select
+              id="land-unit"
+              class="px-3 py-3 border border-green-300 rounded-md focus:outline-none focus:ring-2 focus:ring-light-green"
+            >
+              <option value="bigha">Bigha</option>
+              <option value="katha">Katha</option>
+              <option value="acre">Acre</option>
+            </select>
+          </div>
+
+          <p class="text-gray-600 text-sm italic" id="conversion-output">
+            Output: 1 Bigha = 20 Katha = 0.33 Acre
+          </p>
+        </div>
+      </section>
+
+      <script>
+        const landValueInput = document.getElementById("land-value");
+        const landUnitSelect = document.getElementById("land-unit");
+        const conversionOutput = document.getElementById("conversion-output");
+
+        function convertLand(value, unit) {
+          if (!value || value <= 0) return "";
+
+          let bigha, katha, acre;
+
+          switch (unit) {
+            case "bigha":
+              bigha = value;
+              katha = value * 20;
+              acre = value * 0.33;
+              break;
+            case "katha":
+              bigha = value / 20;
+              katha = value;
+              acre = (value / 20) * 0.33;
+              break;
+            case "acre":
+              bigha = value / 0.33;
+              katha = (value / 0.33) * 20;
+              acre = value;
+              break;
+            default:
+              return "";
+          }
+
+          return `Output: ${bigha.toFixed(2)} Bigha = ${katha.toFixed(
+            2
+          )} Katha = ${acre.toFixed(2)} Acre`;
+        }
+
+        function updateConversion() {
+          const value = parseFloat(landValueInput.value);
+          const unit = landUnitSelect.value;
+          const result = convertLand(value, unit);
+          conversionOutput.textContent =
+            result || "Please enter a positive value.";
+        }
+
+        landValueInput.addEventListener("input", updateConversion);
+        landUnitSelect.addEventListener("change", updateConversion);
+      </script>
+
+      <section id="faq" class="mb-10">
+        <div
+          class="bg-white rounded-xl p-4 md:p-8 shadow-md max-w-5xl mx-auto space-y-6"
+        >
+          <div
+            class="flex items-center gap-3 text-deep-green font-bold text-xl md:text-3xl"
+          >
+            <i class="ph ph-question text-4xl"></i>
+            <span>Frequently Asked Questions</span>
+          </div>
+          <details
+            class="text-gray-700 text-base border-b border-green-300 pb-3"
+            open
+          >
+            <summary class="cursor-pointer font-semibold text-deep-green">
+              How do I request land through Bhorosha?
+            </summary>
+            <p class="mt-2">
+              Navigate to the "Land Requests" section, fill in the details about
+              your land needs, and submit the request. Our platform will notify
+              you when matching lands are available.
+            </p>
+          </details>
+          <details
+            class="text-gray-700 text-base border-b border-green-300 pb-3"
+          >
+            <summary class="cursor-pointer font-semibold text-deep-green">
+              Can I save land listings to review later?
+            </summary>
+            <p class="mt-2">
+              Yes, simply tap the bookmark icon on any land listing to save it.
+              Access all your saved lands anytime in the "Saved Lands" section.
+            </p>
+          </details>
+          <details
+            class="text-gray-700 text-base border-b border-green-300 pb-3"
+          >
+            <summary class="cursor-pointer font-semibold text-deep-green">
+              What units are supported in the Land Converter?
+            </summary>
+            <p class="mt-2">
+              The converter supports Bigha, Katha, and Acre — the common land
+              units used across Bangladesh.
+            </p>
+          </details>
+          <details class="text-gray-700 text-base pb-3">
+            <summary class="cursor-pointer font-semibold text-deep-green">
+              How do I contact landowners directly?
+            </summary>
+            <p class="mt-2">
+              Once you find a suitable listing, you can contact the landowner
+              through the platform’s secure messaging system.
+            </p>
+          </details>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

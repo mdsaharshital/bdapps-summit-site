@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browse Listings | Bhorosha</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link href="/assets/css/style.css" rel="stylesheet" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+      :root {
+        --deep-green: #073a2d;
+        --light-green: #b3d745;
+      }
+      .text-deep-green {
+        color: var(--deep-green);
+      }
+      .bg-deep-green {
+        background-color: var(--deep-green);
+      }
+      .bg-light-green {
+        background-color: var(--light-green);
+      }
+      .text-light-green {
+        color: var(--light-green);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <!-- Header -->
+    <header
+      class="shadow-md sticky top-0 z-50"
+      style="background-color: var(--deep-green)"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 flex items-center justify-between py-3 text-white"
+      >
+        <!-- Logo + Name -->
+        <a href="/">
+          <div class="flex items-center gap-3">
+            <img
+              src="/assets/images/Bhorosha Logo.png"
+              alt="Bhorosha Logo"
+              class="h-12 w-auto max-h-14"
+            />
+            <span class="text-2xl font-extrabold tracking-wide text-[#b3d745]"
+              >Bhorosha</span
+            >
+          </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+          <a href="#services" class="hover:text-[#b3d745] transition"
+            >Our Services</a
+          >
+          <a href="#how" class="hover:text-[#b3d745] transition">How We Work</a>
+          <a href="login.html" class="hover:text-[#b3d745] transition"
+            >Sign Up</a
+          >
+        </nav>
+
+        <!-- Mobile Hamburger -->
+        <button id="mobile-menu-toggle" class="md:hidden text-xl">☰</button>
+
+        <!-- CTA -->
+        <a
+          href="login.html"
+          class="hidden md:inline-block px-4 py-2 rounded-full text-sm font-semibold shadow hover:scale-105 transition"
+          style="background-color: var(--light-green); color: var(--deep-green)"
+        >
+          Client Login
+        </a>
+      </div>
+
+      <!-- Mobile Nav Dropdown -->
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden flex-col bg-[#073a2d] text-white px-4 py-4 space-y-3"
+      >
+        <a href="#services" class="block hover:text-[#b3d745]">Our Services</a>
+        <a href="#how" class="block hover:text-[#b3d745]">How We Work</a>
+        <a href="login.html" class="block hover:text-[#b3d745]">Sign Up</a>
+        <a
+          href="login.html"
+          class="inline-block btn-primary px-4 py-2 rounded-full text-sm font-semibold mt-2"
+        >
+          Client Login
+        </a>
+      </div>
+    </header>
+
+    <!-- Script to toggle mobile nav -->
+    <script>
+      // Wait for the DOM to load completely
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggle = document.getElementById("mobile-menu-toggle");
+        const menu = document.getElementById("mobile-menu");
+
+        // Debug: Ensure the elements are selected
+        console.log(toggle, menu);
+
+        toggle.addEventListener("click", () => {
+          // Toggle the 'hidden' class on the mobile menu
+          menu.classList.toggle("hidden");
+        });
+      });
+    </script>
+
+    <!-- Page Title -->
+    <section class="bg-white py-8 border-b">
+      <div class="max-w-7xl mx-auto px-4 text-center">
+        <h1 class="text-3xl font-bold mb-2 text-[var(--deep-green)]">
+          Browse Available Land Listings
+        </h1>
+        <p class="text-sm text-gray-600">
+          Find land to lease by size, location, and leasing duration
+        </p>
+        <div class="flex justify-center items-center mt-4">
+          <input
+            id="search"
+            type="text"
+            placeholder="Search by location..."
+            class="mt-4 px-4 py-2 border rounded-md text-sm w-full max-w-sm mx-auto"
+          />
+          <i
+            class="ph ph-magnifying-glass text-deep-green absolute left-3 top-3"
+          ></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sort Controls -->
+    <section class="py-6">
+      <div
+        class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4"
+      >
+        <label class="text-sm font-medium">Sort By:</label>
+        <div class="flex items-center space-x-2">
+          <select
+            id="sort"
+            class="border rounded-md px-3 py-2 text-sm focus:outline-none"
+          >
+            <option value="">Select Option</option>
+            <option value="lease-asc">Leasing Time: Shortest to Longest</option>
+            <option value="lease-desc">
+              Leasing Time: Longest to Shortest
+            </option>
+            <option value="size-asc">Land Size: Smallest to Largest</option>
+            <option value="size-desc">Land Size: Largest to Smallest</option>
+            <option value="location">Location (A-Z)</option>
+          </select>
+          <i class="ph ph-sort-ascending text-deep-green"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- Listings Grid -->
+    <section class="pb-16">
+      <div
+        id="listings"
+        class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+      >
+        <!-- Cards will be populated via JavaScript -->
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <script>
+      fetch("components/nav.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("navbar").innerHTML = data;
+        });
+
+      fetch("components/footer.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
+        });
+
+      const listingsData = [
+        {
+          id: 1,
+          location: "Savar, Dhaka",
+          size: 3,
+          lease: 5,
+          img: "land1.jpg",
+        },
+        { id: 2, location: "Jessore", size: 2.5, lease: 3, img: "land10.jpg" },
+        { id: 3, location: "Rangpur", size: 1.8, lease: 2, img: "land8.jpg" },
+        { id: 4, location: "Sylhet", size: 3.5, lease: 6, img: "land5.jpeg" },
+        { id: 5, location: "Cumilla", size: 2.2, lease: 4, img: "land6.jpeg" },
+        { id: 6, location: "Rajshahi", size: 4.8, lease: 8, img: "land7.avif" },
+        { id: 7, location: "Bogura", size: 2.9, lease: 5, img: "land4.jpg" },
+        {
+          id: 8,
+          location: "Mymensingh",
+          size: 4.2,
+          lease: 7,
+          img: "land3.jpg",
+        },
+        { id: 9, location: "Tangail", size: 3.3, lease: 6, img: "land2.jpg" },
+      ];
+
+      const listingsContainer = document.getElementById("listings");
+
+      function renderListings(data) {
+        listingsContainer.innerHTML = data
+          .map(
+            (listing) => `
+      <div class="bg-white shadow-lg rounded-xl overflow-hidden border border-gray-200 hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+  <img src="/assets/images/${listing.img}" alt="Land" class="w-full h-48 object-cover rounded-t-xl" />
+  <div class="p-6">
+    <h3 class="text-xl font-semibold text-[var(--deep-green)] mb-2">${listing.location}</h3>
+    <p class="text-sm text-gray-600 mt-1">Land Size: <strong>${listing.size} Acre</strong></p>
+    <p class="text-sm text-gray-600">Leasing Period: <strong>${listing.lease} Years</strong></p>
+    <a href="land-details.html?id=${listing.id}" class="mt-4 inline-flex items-center gap-2 text-[var(--light-green)] font-medium text-sm">
+      <i class="ph ph-arrow-right"></i> <span>View Details</span>
+    </a>
+  </div>
+</div>
+
+    `
+          )
+          .join("");
+      }
+
+      renderListings(listingsData);
+
+      document.getElementById("sort").addEventListener("change", function () {
+        const val = this.value;
+        let sorted = [...listingsData];
+        if (val === "lease-asc") sorted.sort((a, b) => a.lease - b.lease);
+        else if (val === "lease-desc") sorted.sort((a, b) => b.lease - a.lease);
+        else if (val === "size-asc") sorted.sort((a, b) => a.size - b.size);
+        else if (val === "size-desc") sorted.sort((a, b) => b.size - a.size);
+        else if (val === "location")
+          sorted.sort((a, b) => a.location.localeCompare(b.location));
+        renderListings(sorted);
+      });
+
+      document.getElementById("search").addEventListener("input", function () {
+        const term = this.value.toLowerCase();
+        const filtered = listingsData.filter((item) =>
+          item.location.toLowerCase().includes(term)
+        );
+        renderListings(filtered);
+      });
+    </script>
+  </body>
+</html>

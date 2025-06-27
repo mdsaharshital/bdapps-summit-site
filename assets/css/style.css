@@ -1,0 +1,12 @@
+:root {
+  --deep-green: #073a2d;
+  --light-green: #b3d745;
+}
+/* style.css */
+.btn-primary {
+  background-color: var(--light-green);
+  color: var(--deep-green);
+}
+
+.header {
+}

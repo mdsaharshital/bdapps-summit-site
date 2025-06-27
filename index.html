@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bhorosha | Stay Relieved, Optimize Your Land’s Potential</title>
+    <link rel="icon" href="assets/images/logo.png" type="image/png" />
+    <meta
+      name="description"
+      content="Bhorosha - Land leasing made simple for Bangladesh."
+    />
+    <meta property="og:image" content="assets/images/dashboardFarmer.png" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link href="/assets/css/style.css" rel="stylesheet" />
+    <link rel="icon" href="/assets/images/logo.png" />
+    <style>
+      :root {
+        --deep-green: #073a2d;
+        --light-green: #b3d745;
+      }
+
+      .text-deep-green {
+        color: var(--deep-green);
+      }
+
+      .bg-deep-green {
+        background-color: var(--deep-green);
+      }
+
+      .bg-light-green {
+        background-color: var(--light-green);
+      }
+
+      .text-light-green {
+        color: var(--light-green);
+      }
+    </style>
+    <!-- Use direct Phosphor Icons CDN -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  </head>
+  <body class="font-sans bg-white text-gray-800">
+    <!-- Header -->
+    <header
+      class="shadow-md sticky top-0 z-50"
+      style="background-color: var(--deep-green)"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 flex items-center justify-between py-3 text-white"
+      >
+        <!-- Logo + Name -->
+        <a href="/">
+          <div class="flex items-center gap-3">
+            <img
+              src="/assets/images/Bhorosha Logo.png"
+              alt="Bhorosha Logo"
+              class="h-12 w-auto max-h-14"
+            />
+            <span class="text-2xl font-extrabold tracking-wide text-[#b3d745]"
+              >Bhorosha</span
+            >
+          </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+          <a href="#services" class="hover:text-[#b3d745] transition"
+            >Our Services</a
+          >
+          <a href="#how" class="hover:text-[#b3d745] transition">How We Work</a>
+          <a href="login.html" class="hover:text-[#b3d745] transition"
+            >Sign Up</a
+          >
+        </nav>
+
+        <!-- Mobile Hamburger -->
+        <button id="mobile-menu-toggle" class="md:hidden text-xl">☰</button>
+
+        <!-- CTA -->
+        <a
+          href="login.html"
+          class="hidden md:inline-block px-4 py-2 rounded-full text-sm font-semibold shadow hover:scale-105 transition"
+          style="background-color: var(--light-green); color: var(--deep-green)"
+        >
+          Client Login
+        </a>
+      </div>
+
+      <!-- Mobile Nav Dropdown -->
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden flex-col bg-[#073a2d] text-white px-4 py-4 space-y-3"
+      >
+        <a href="#services" class="block hover:text-[#b3d745]">Our Services</a>
+        <a href="#how" class="block hover:text-[#b3d745]">How We Work</a>
+        <a href="login.html" class="block hover:text-[#b3d745]">Sign Up</a>
+        <a
+          href="login.html"
+          class="inline-block btn-primary px-4 py-2 rounded-full text-sm font-semibold mt-2"
+        >
+          Client Login
+        </a>
+      </div>
+    </header>
+
+    <!-- Script to toggle mobile nav -->
+    <script>
+      // Wait for the DOM to load completely
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggle = document.getElementById("mobile-menu-toggle");
+        const menu = document.getElementById("mobile-menu");
+
+        // Debug: Ensure the elements are selected
+        console.log(toggle, menu);
+
+        toggle.addEventListener("click", () => {
+          // Toggle the 'hidden' class on the mobile menu
+          menu.classList.toggle("hidden");
+        });
+      });
+    </script>
+
+    <!-- Header -->
+
+    <!-- Hero Section -->
+    <section
+      class="relative w-full min-h-screen flex items-center justify-center bg-center bg-cover text-white text-center"
+      style="
+        background-image: url('/assets/images/bangladesh_-_rice_farmer.png');
+      "
+    >
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+
+      <!-- Content -->
+      <div class="relative z-10 px-6 py-16 max-w-4xl mx-auto">
+        <h1
+          class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-6 drop-shadow-md"
+        >
+          Stay Relieved,<br class="hidden md:inline" />
+          Optimize Your Land’s Potential
+        </h1>
+        <p
+          class="text-lg sm:text-xl mb-8 text-gray-100 max-w-xl mx-auto leading-relaxed drop-shadow"
+        >
+          A pioneering land rental and leasing agency supporting secure,
+          productive agriculture in Bangladesh.
+        </p>
+        <a
+          href="browse-listings.html"
+          class="btn-primary inline-block px-6 py-3 rounded-full text-sm font-bold shadow-lg bg-[#b3d745] text-[#073a2d] hover:scale-105 transition transform duration-300"
+        >
+          Explore Listings
+        </a>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section
+      id="services"
+      class="relative py-20 overflow-hidden"
+      style="
+        background: linear-gradient(135deg, #1b5e20cc 0%, #66bb6acc 100%);
+        color: #e6f0e6;
+      "
+    >
+      <!-- Wave SVG Background -->
+      <div
+        class="absolute inset-x-0 top-0 -mt-20 pointer-events-none select-none"
+        aria-hidden="true"
+      >
+        <svg
+          viewBox="0 0 1440 160"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-full h-40"
+        >
+          <path
+            fill="white"
+            fill-opacity="0.15"
+            d="M0,64L48,69.3C96,75,192,85,288,117.3C384,149,480,203,576,197.3C672,192,768,128,864,117.3C960,107,1056,149,1152,176C1248,203,1344,213,1392,218.7L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+          />
+          <path
+            fill="white"
+            fill-opacity="0.10"
+            d="M0,96L48,101.3C96,107,192,117,288,138.7C384,160,480,192,576,176C672,160,768,96,864,69.3C960,43,1056,53,1152,90.7C1248,128,1344,192,1392,224L1440,256L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+          />
+        </svg>
+      </div>
+
+      <div class="relative max-w-6xl mx-auto px-6 text-white">
+        <h2 class="text-4xl font-extrabold mb-16 text-center drop-shadow-lg">
+          How we contribute
+        </h2>
+
+        <!-- Service 1: Icon+Text Left, Image Right -->
+        <div
+          class="flex flex-col md:flex-row items-center bg-white bg-opacity-10 rounded-3xl shadow-lg p-10 mb-16 backdrop-blur-md"
+        >
+          <div class="md:w-1/2 space-y-6">
+            <div class="flex items-center gap-4">
+              <i class="ph ph-archive text-4xl text-light-green"></i>
+              <h3 class="text-3xl font-semibold drop-shadow-md">
+                Reduce Burden
+              </h3>
+            </div>
+            <p class="text-lg leading-relaxed max-w-md">
+              We lease and manage lands, connect advanced resources and tech,
+              and ensure optimized returns—so landowners can stay stress-free.
+            </p>
+          </div>
+          <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center">
+            <img
+              src="./assets/images/reduce.webp"
+              alt="Land management"
+              class="rounded-2xl shadow-xl max-w-full h-auto object-cover"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <!-- Service 2: Image Left, Icon+Text Right -->
+        <div
+          class="flex flex-col md:flex-row md:gap-6 items-center bg-white bg-opacity-10 rounded-3xl shadow-lg p-10 mb-16 backdrop-blur-md"
+        >
+          <div class="md:w-1/2 flex justify-center order-2 md:order-1">
+            <img
+              src="./assets/images/landsaver.webp"
+              alt="Land protection"
+              class="rounded-2xl shadow-xl max-w-full h-auto object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div class="md:w-1/2 mt-10 md:mt-0 space-y-6 order-1 md:order-2">
+            <div class="flex items-center gap-4">
+              <i class="ph ph-shield-check text-4xl text-light-green"></i>
+              <h3 class="text-3xl font-semibold drop-shadow-md">Save Land</h3>
+            </div>
+            <p class="text-lg leading-relaxed max-w-md">
+              We protect land from misuse through reliable agreements,
+              monitoring, and regular documentation for peace of mind and
+              security.
+            </p>
+          </div>
+        </div>
+
+        <!-- Service 3: Icon+Text Left, Image Right -->
+        <div
+          class="flex flex-col md:flex-row items-center bg-white bg-opacity-10 rounded-3xl shadow-lg p-10 backdrop-blur-md"
+        >
+          <div class="md:w-1/2 space-y-6">
+            <div class="flex items-center gap-4">
+              <i class="ph ph-arrow-up-right text-4xl text-light-green"></i>
+              <h3 class="text-3xl font-semibold drop-shadow-md">
+                Optimize Gain
+              </h3>
+            </div>
+            <p class="text-lg leading-relaxed max-w-md">
+              We increase profitability through modern agriculture, data-driven
+              decisions, and a direct-to-market supply chain.
+            </p>
+          </div>
+          <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center">
+            <img
+              src="./assets/images/optimzed.jpg"
+              alt="Agriculture optimization"
+              class="rounded-2xl shadow-xl max-w-full h-auto object-cover"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section
+      class="py-20"
+      style="background: linear-gradient(135deg, #073a2dcc 0%, #1b5e2086 100%)"
+    >
+      <div class="max-w-4xl mx-auto px-6 text-center text-white">
+        <h2 class="text-3xl font-extrabold mb-6 drop-shadow-lg">
+          Ready to Dive In?
+        </h2>
+        <p class="mb-8 text-lg max-w-xl mx-auto drop-shadow-md">
+          Join the movement to secure and optimize land across Bangladesh.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-6">
+          <a
+            href="login.html"
+            class="bg-white text-black font-semibold px-8 py-3 rounded-full shadow-lg flex items-center justify-center gap-3 hover:scale-105 transition-transform duration-300"
+          >
+            <i class="ph ph-user-plus text-xl"></i>
+            Sign Up
+          </a>
+          <a
+            style="background-color: #66bb6a"
+            href="browse-listings.html"
+            class="text-white font-semibold px-8 py-3 rounded-full shadow-lg flex items-center justify-center gap-3 hover:scale-105 transition-transform duration-300"
+          >
+            <i class="ph ph-list text-xl"></i>
+            Browse Listings
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- How We Work -->
+    <!-- How Do We Work? Section -->
+    <section
+      id="how"
+      class="relative py-20 overflow-hidden"
+      style="
+        background: linear-gradient(135deg, #1b5e20cc 0%, #66bb6acc 100%);
+        color: #e6f0e6;
+      "
+    >
+      <!-- Wave SVG Background -->
+      <div
+        class="absolute inset-x-0 top-0 -mt-20 pointer-events-none select-none"
+        aria-hidden="true"
+      >
+        <svg
+          viewBox="0 0 1440 160"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-full h-40"
+        >
+          <path
+            fill="white"
+            fill-opacity="0.15"
+            d="M0,64L48,69.3C96,75,192,85,288,117.3C384,149,480,203,576,197.3C672,192,768,128,864,117.3C960,107,1056,149,1152,176C1248,203,1344,213,1392,218.7L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+          />
+          <path
+            fill="white"
+            fill-opacity="0.10"
+            d="M0,96L48,101.3C96,107,192,117,288,138.7C384,160,480,192,576,176C672,160,768,96,864,69.3C960,43,1056,53,1152,90.7C1248,128,1344,192,1392,224L1440,256L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+          />
+        </svg>
+      </div>
+
+      <div class="relative max-w-6xl mx-auto px-6">
+        <h2 class="text-4xl font-extrabold mb-16 text-center drop-shadow-lg">
+          How Do We Work?
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
+          <!-- Item 1 -->
+          <div
+            class="flex flex-col items-center bg-white bg-opacity-10 rounded-3xl p-8 shadow-lg backdrop-blur-md text-center"
+          >
+            <i
+              style="color: #073a2d"
+              class="ph ph-plant text-6xl mb-6 drop-shadow-md"
+            ></i>
+            <h3 class="text-2xl font-semibold text-white mb-4 drop-shadow-md">
+              Research & Planting
+            </h3>
+            <p class="text-white text-base max-w-xs">
+              We focus on modern farming techniques and high-yield crops.
+            </p>
+          </div>
+
+          <!-- Item 2 -->
+          <div
+            class="flex flex-col items-center bg-white bg-opacity-10 rounded-3xl p-8 shadow-lg backdrop-blur-md text-center"
+          >
+            <i
+              style="color: #073a2d"
+              class="ph ph-truck text-6xl mb-6 drop-shadow-md"
+            ></i>
+            <h3 class="text-2xl font-semibold text-white mb-4 drop-shadow-md">
+              Distribution & Supply
+            </h3>
+            <p class="text-white text-base max-w-xs">
+              We handle the logistics, ensuring timely delivery to the market.
+            </p>
+          </div>
+
+          <!-- Item 3 -->
+          <div
+            class="flex flex-col items-center bg-white bg-opacity-10 rounded-3xl p-8 shadow-lg backdrop-blur-md text-center"
+          >
+            <i
+              style="color: #073a2d"
+              class="ph ph-check-circle text-6xl mb-6 drop-shadow-md"
+            ></i>
+            <h3 class="text-2xl font-semibold text-white mb-4 drop-shadow-md">
+              Profit Sharing
+            </h3>
+            <p class="text-white text-base max-w-xs">
+              Fair profit-sharing ensures landowners and farmers both benefit.
+            </p>
+          </div>
+
+          <!-- Item 4 -->
+          <div
+            class="flex flex-col items-center bg-white bg-opacity-10 rounded-3xl p-8 shadow-lg backdrop-blur-md text-center"
+          >
+            <i
+              style="color: #073a2d"
+              class="ph ph-currency-dollar text-6xl mb-6 drop-shadow-md"
+            ></i>
+            <h3 class="text-2xl font-semibold text-white mb-4 drop-shadow-md">
+              Sustainability & Growth
+            </h3>
+            <p class="text-white text-base max-w-xs">
+              We focus on long-term sustainability to secure future growth.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="my-10">
+      <div
+        class="bg-white rounded-xl p-8 shadow-md max-w-5xl mx-auto space-y-6"
+      >
+        <div class="flex items-center gap-3 text-deep-green font-bold text-2xl">
+          <i class="ph ph-question text-4xl"></i>
+          <span>Frequently Asked Questions</span>
+        </div>
+        <details
+          class="text-gray-700 text-base border-b border-green-300 pb-3"
+          open
+        >
+          <summary class="cursor-pointer font-semibold text-deep-green">
+            How do I request land through Bhorosha?
+          </summary>
+          <p class="mt-2">
+            Navigate to the "Land Requests" section, fill in the details about
+            your land needs, and submit the request. Our platform will notify
+            you when matching lands are available.
+          </p>
+        </details>
+        <details class="text-gray-700 text-base border-b border-green-300 pb-3">
+          <summary class="cursor-pointer font-semibold text-deep-green">
+            Can I save land listings to review later?
+          </summary>
+          <p class="mt-2">
+            Yes, simply tap the bookmark icon on any land listing to save it.
+            Access all your saved lands anytime in the "Saved Lands" section.
+          </p>
+        </details>
+        <details class="text-gray-700 text-base border-b border-green-300 pb-3">
+          <summary class="cursor-pointer font-semibold text-deep-green">
+            What units are supported in the Land Converter?
+          </summary>
+          <p class="mt-2">
+            The converter supports Bigha, Katha, and Acre — the common land
+            units used across Bangladesh.
+          </p>
+        </details>
+        <details class="text-gray-700 text-base pb-3">
+          <summary class="cursor-pointer font-semibold text-deep-green">
+            How do I contact landowners directly?
+          </summary>
+          <p class="mt-2">
+            Once you find a suitable listing, you can contact the landowner
+            through the platform’s secure messaging system.
+          </p>
+        </details>
+      </div>
+    </section>
+    <!-- Footer -->
+    <div id="footer" class="shadow-md sticky top-0 z-50"></div>
+  </body>
+</html>
+<script>
+  //   fetch("components/nav.html")
+  //     .then((res) => res.text())
+  //     .then((data) => {
+  //       document.getElementById("navbar").innerHTML = data;
+  //     });
+  fetch("components/footer.html")
+    .then((res) => res.text())
+    .then((data) => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>

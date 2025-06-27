@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Land Details | Bhorosha</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link href="/assets/css/style.css" rel="stylesheet" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+      :root {
+        --deep-green: #073a2d;
+        --light-green: #b3d745;
+      }
+      .text-deep-green {
+        color: var(--deep-green);
+      }
+      .bg-deep-green {
+        background-color: var(--deep-green);
+      }
+      .bg-light-green {
+        background-color: var(--light-green);
+      }
+      .text-light-green {
+        color: var(--light-green);
+      }
+    </style>
+  </head>
+  <!-- 
+  
+  -->
+  <body class="bg-gray-50 text-gray-800">
+    <!-- Header -->
+    <header
+      class="shadow-md sticky top-0 z-50"
+      style="background-color: var(--deep-green)"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 flex items-center justify-between py-3 text-white"
+      >
+        <!-- Logo + Name -->
+        <a href="/">
+          <div class="flex items-center gap-3">
+            <img
+              src="/assets/images/Bhorosha Logo.png"
+              alt="Bhorosha Logo"
+              class="h-12 w-auto max-h-14"
+            />
+            <span class="text-2xl font-extrabold tracking-wide text-[#b3d745]"
+              >Bhorosha</span
+            >
+          </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+          <a href="#services" class="hover:text-[#b3d745] transition"
+            >Our Services</a
+          >
+          <a href="#how" class="hover:text-[#b3d745] transition">How We Work</a>
+          <a href="login.html" class="hover:text-[#b3d745] transition"
+            >Sign Up</a
+          >
+        </nav>
+
+        <!-- Mobile Hamburger -->
+        <button id="mobile-menu-toggle" class="md:hidden text-xl">☰</button>
+
+        <!-- CTA -->
+        <a
+          href="login.html"
+          class="hidden md:inline-block px-4 py-2 rounded-full text-sm font-semibold shadow hover:scale-105 transition"
+          style="background-color: var(--light-green); color: var(--deep-green)"
+        >
+          Client Login
+        </a>
+      </div>
+
+      <!-- Mobile Nav Dropdown -->
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden flex-col bg-[#073a2d] text-white px-4 py-4 space-y-3"
+      >
+        <a href="#services" class="block hover:text-[#b3d745]">Our Services</a>
+        <a href="#how" class="block hover:text-[#b3d745]">How We Work</a>
+        <a href="login.html" class="block hover:text-[#b3d745]">Sign Up</a>
+        <a
+          href="login.html"
+          class="inline-block btn-primary px-4 py-2 rounded-full text-sm font-semibold mt-2"
+        >
+          Client Login
+        </a>
+      </div>
+    </header>
+
+    <!-- Script to toggle mobile nav -->
+    <script>
+      // Wait for the DOM to load completely
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggle = document.getElementById("mobile-menu-toggle");
+        const menu = document.getElementById("mobile-menu");
+
+        // Debug: Ensure the elements are selected
+        console.log(toggle, menu);
+
+        toggle.addEventListener("click", () => {
+          // Toggle the 'hidden' class on the mobile menu
+          menu.classList.toggle("hidden");
+        });
+      });
+    </script>
+
+    <!-- Back Button & Image -->
+    <section class="relative md:mt-10">
+      <a
+        href="browse-listings.html"
+        class="absolute top-4 left-4 z-20 bg-white flex justify-center items-center p-2 rounded-full shadow hover:scale-105 transition"
+      >
+        <i class="ph ph-arrow-left text-xl text-deep-green"></i>
+      </a>
+
+      <div class="flex justify-center">
+        <img
+          id="landImage"
+          src=""
+          alt="Land Preview"
+          class="h-[60vh] w-auto max-w-full rounded-b-2xl md:rounded-2xl shadow object-cover"
+        />
+      </div>
+    </section>
+
+    <!-- Tag Buttons -->
+    <div class="max-w-5xl mx-auto px-4 mt-4 flex gap-3">
+      <span
+        class="px-3 py-1 text-sm rounded-full bg-light-green text-deep-green font-medium flex items-center gap-1"
+      >
+        <i class="ph ph-plant"></i> Summary
+      </span>
+      <span
+        class="px-3 py-1 text-sm rounded-full bg-light-green text-deep-green font-medium flex items-center gap-1"
+      >
+        <i class="ph ph-file-text"></i> Lease Info
+      </span>
+      <span
+        class="px-3 py-1 text-sm rounded-full bg-light-green text-deep-green font-medium flex items-center gap-1"
+      >
+        <i class="ph ph-bookmark"></i> Bookmark
+      </span>
+    </div>
+
+    <!-- Details Section -->
+    <section class="py-10">
+      <div class="max-w-5xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Owner Info -->
+        <div class="bg-white p-6 rounded-xl shadow border border-gray-100">
+          <h2 class="text-xl font-bold text-deep-green mb-4">
+            Landowner Details
+          </h2>
+          <ul class="text-sm text-gray-700 space-y-2">
+            <li><strong>Owner:</strong> Yousuf Ali</li>
+            <li>
+              <strong>Location:</strong> <span id="ownerLocation">...</span>
+            </li>
+            <li>
+              <strong>Map:</strong>
+              <a href="#" class="text-deep-green underline">Google Map Link</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Land Info -->
+        <div class="bg-deep-green text-white p-6 rounded-xl shadow">
+          <h2 class="text-xl font-bold mb-4">Leasing Information</h2>
+          <ul class="text-sm space-y-2">
+            <li>
+              <strong>Leasing Period:</strong> <span id="leasePeriod">...</span>
+            </li>
+            <li><strong>Leasing Fee:</strong> 45,000 BDT (Negotiable)</li>
+            <li>
+              <strong>Land Size:</strong> <span id="landSize">...</span> Acre
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- General Info Section -->
+    <section class="max-w-5xl mx-auto px-4 mb-10">
+      <div class="bg-white border border-gray-200 p-6 rounded-xl shadow-md">
+        <h3 class="text-lg font-semibold text-deep-green mb-3">
+          Why lease this land?
+        </h3>
+        <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1">
+          <li>Fertile soil, ready for cultivation</li>
+          <li>Safe from flooding, elevated land</li>
+          <li>Previously used for rice & vegetable farming</li>
+          <li>Easy access to local markets and roads</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <div class="max-w-5xl mx-auto px-4 pb-16 text-center">
+      <a
+        href="tel:01865333143"
+        class="inline-flex items-center gap-2 px-6 py-3 bg-light-green text-deep-green rounded-full font-semibold shadow hover:scale-105 transition"
+      >
+        <i class="ph ph-phone-call text-lg"></i> Contact Landowner
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <script>
+      fetch("components/nav.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("navbar").innerHTML = data;
+        });
+
+      fetch("components/footer.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
+        });
+
+      const listingsData = [
+        {
+          id: 1,
+          location: "Savar, Dhaka",
+          size: 3,
+          lease: 5,
+          img: "land1.jpg",
+        },
+        { id: 2, location: "Jessore", size: 2.5, lease: 3, img: "land10.jpg" },
+        { id: 3, location: "Rangpur", size: 1.8, lease: 2, img: "land8.jpg" },
+        { id: 4, location: "Sylhet", size: 3.5, lease: 6, img: "land5.jpeg" },
+        { id: 5, location: "Cumilla", size: 2.2, lease: 4, img: "land6.jpeg" },
+        { id: 6, location: "Rajshahi", size: 4.8, lease: 8, img: "land7.avif" },
+        { id: 7, location: "Bogura", size: 2.9, lease: 5, img: "land4.jpg" },
+        {
+          id: 8,
+          location: "Mymensingh",
+          size: 4.2,
+          lease: 7,
+          img: "land3.jpg",
+        },
+        { id: 9, location: "Tangail", size: 3.3, lease: 6, img: "land2.jpg" },
+      ];
+
+      const params = new URLSearchParams(window.location.search);
+      const id = parseInt(params.get("id"));
+      const listing = listingsData.find((item) => item.id === id);
+
+      if (listing) {
+        const landImage = document.getElementById("landImage");
+        const leasePeriod = document.getElementById("leasePeriod");
+        const landSize = document.getElementById("landSize");
+        const ownerLocation = document.getElementById("ownerLocation");
+
+        landImage.src = `/assets/images/${listing.img}`;
+        landImage.alt = `Preview of land in ${listing.location}`;
+        leasePeriod.textContent = `${
+          listing.lease
+        } Years - Ending 31 December, ${2022 + listing.lease}`;
+        landSize.textContent = listing.size;
+        ownerLocation.textContent = listing.location;
+      }
+    </script>
+  </body>
+</html>
