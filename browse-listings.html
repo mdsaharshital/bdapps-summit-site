@@ -194,8 +194,6 @@
         },
         { id: 2, location: "Jessore", size: 2.5, lease: 3, img: "land10.jpg" },
         { id: 3, location: "Rangpur", size: 1.8, lease: 2, img: "land8.jpg" },
-        { id: 4, location: "Sylhet", size: 3.5, lease: 6, img: "land5.jpeg" },
-        { id: 5, location: "Cumilla", size: 2.2, lease: 4, img: "land6.jpeg" },
         { id: 6, location: "Rajshahi", size: 4.8, lease: 8, img: "land7.avif" },
         { id: 7, location: "Bogura", size: 2.9, lease: 5, img: "land4.jpg" },
         {
@@ -206,6 +204,8 @@
           img: "land3.jpg",
         },
         { id: 9, location: "Tangail", size: 3.3, lease: 6, img: "land2.jpg" },
+        { id: 5, location: "Cumilla", size: 2.2, lease: 4, img: "land6.jpeg" },
+        { id: 4, location: "Sylhet", size: 3.5, lease: 6, img: "land5.jpeg" },
       ];
 
       const listingsContainer = document.getElementById("listings");
@@ -214,17 +214,20 @@
         listingsContainer.innerHTML = data
           .map(
             (listing) => `
-      <div class="bg-white shadow-lg rounded-xl overflow-hidden border border-gray-200 hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
-  <img src="./assets/images/${listing.img}" alt="Land" class="w-full h-48 object-cover rounded-t-xl" />
-  <div class="p-6">
-    <h3 class="text-xl font-semibold text-[var(--deep-green)] mb-2">${listing.location}</h3>
-    <p class="text-sm text-gray-600 mt-1">Land Size: <strong>${listing.size} Acre</strong></p>
-    <p class="text-sm text-gray-600">Leasing Period: <strong>${listing.lease} Years</strong></p>
-    <a href="land-details.html?id=${listing.id}" class="mt-4 inline-flex items-center gap-2 text-[var(--light-green)] font-medium text-sm">
-      <i class="ph ph-arrow-right"></i> <span>View Details</span>
-    </a>
+     <a href="land-details.html?id=${listing.id}" class="block transform hover:scale-105 transition-all duration-300">
+  <div class="bg-white shadow-lg rounded-xl overflow-hidden border border-gray-200 hover:shadow-2xl">
+    <img src="./assets/images/${listing.img}" alt="Land" class="w-full h-48 object-cover rounded-t-xl" />
+    <div class="p-6">
+      <h3 class="text-xl font-semibold text-[var(--deep-green)] mb-2">${listing.location}</h3>
+      <p class="text-sm text-gray-600 mt-1">Land Size: <strong>${listing.size} Acre</strong></p>
+      <p class="text-sm text-gray-600">Leasing Period: <strong>${listing.lease} Years</strong></p>
+      <div class="mt-4 inline-flex items-center gap-2 text-[var(--light-green)] font-medium text-sm">
+        <i class="ph ph-arrow-right"></i> <span>View Details</span>
+      </div>
+    </div>
   </div>
-</div>
+</a>
+
 
     `
           )
