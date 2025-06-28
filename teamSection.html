@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meet Our Team</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link href="./assets/css/style.css" rel="stylesheet" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+      :root {
+        --deep-green: #073a2d;
+        --light-green: #b3d745;
+      }
+      .text-deep-green {
+        color: var(--deep-green);
+      }
+      .bg-deep-green {
+        background-color: var(--deep-green);
+      }
+      .bg-light-green {
+        background-color: var(--light-green);
+      }
+      .text-light-green {
+        color: var(--light-green);
+      }
+    </style>
+    <style>
+      .glass {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(0, 128, 0, 0.2);
+      }
+      .team-img {
+        width: 100%;
+        max-width: 320px;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        border-radius: 9999px;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body class="bg-gradient-to-br from-green-50 to-green-100 text-gray-800">
+    <!-- Header -->
+    <header
+      class="shadow-md sticky top-0 z-50"
+      style="background-color: var(--deep-green)"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 flex items-center justify-between py-3 text-white"
+      >
+        <!-- Logo + Name -->
+        <a href="/">
+          <div class="flex items-center gap-3">
+            <img
+              src="./assets/images/Bhorosha Logo.png"
+              alt="Bhorosha Logo"
+              class="h-12 w-auto max-h-14"
+            />
+            <span class="text-2xl font-extrabold tracking-wide text-[#b3d745]"
+              >Bhorosha</span
+            >
+          </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+          <a href="#services" class="hover:text-[#b3d745] transition"
+            >Our Services</a
+          >
+          <a href="#how" class="hover:text-[#b3d745] transition">How We Work</a>
+          <a href="/teamSection.html" class="hover:text-[#b3d745] transition"
+            >About Us</a
+          >
+          <a
+            style="color: #b3d745"
+            href="landlist-form.html"
+            class="hover:text-[#b3d745] transition"
+            >List Your land</a
+          >
+        </nav>
+
+        <!-- Mobile Hamburger -->
+        <button id="mobile-menu-toggle" class="md:hidden text-xl">☰</button>
+
+        <!-- CTA -->
+        <a
+          href="login.html"
+          class="hidden md:inline-block px-4 py-2 rounded-full text-sm font-semibold shadow hover:scale-105 transition"
+          style="background-color: var(--light-green); color: var(--deep-green)"
+        >
+          Client Login
+        </a>
+      </div>
+
+      <!-- Mobile Nav Dropdown -->
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden flex-col bg-[#073a2d] text-white px-4 py-4 space-y-3"
+      >
+        <a href="#services" class="block hover:text-[#b3d745]">Our Services</a>
+        <a href="#how" class="block hover:text-[#b3d745]">How We Work</a>
+        <a
+          href="/teamSection.html"
+          class="block hover:text-[#b3d745] transition"
+          >About Us</a
+        >
+        <a
+          style="color: #b3d745"
+          href="landlist-form.html"
+          class="block transition"
+          >List Your land</a
+        >
+        <a
+          href="login.html"
+          class="inline-block btn-primary px-4 py-2 rounded-full text-sm font-semibold mt-2"
+        >
+          Client Login
+        </a>
+      </div>
+    </header>
+
+    <!-- Script to toggle mobile nav -->
+    <script>
+      // Wait for the DOM to load completely
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggle = document.getElementById("mobile-menu-toggle");
+        const menu = document.getElementById("mobile-menu");
+
+        // Debug: Ensure the elements are selected
+        console.log(toggle, menu);
+
+        toggle.addEventListener("click", () => {
+          // Toggle the 'hidden' class on the mobile menu
+          menu.classList.toggle("hidden");
+        });
+      });
+    </script>
+    <div class="p-6">
+      <div class="max-w-5xl mx-auto space-y-14">
+        <h1 class="text-4xl font-bold text-center text-green-800 mb-10">
+          🌿 Meet Our Team
+        </h1>
+
+        <div class="space-y-20">
+          <!-- Shahoriar - right image -->
+          <div
+            class="flex flex-col md:flex-row-reverse items-center glass rounded-3xl p-6 shadow-xl"
+          >
+            <div class="md:w-1/2 mb-6 md:mb-0">
+              <img
+                src="./assets/images/mdalshahoriarhossain.jpeg"
+                alt="Shahoriar"
+                class="team-img"
+              />
+            </div>
+            <div class="md:w-1/2 text-center md:text-left space-y-3">
+              <h2 class="text-2xl font-bold text-green-800">
+                MD AL SHAHORIAR HOSSAIN
+              </h2>
+              <p class="text-sm text-gray-600">Operations & Governance Lead</p>
+              <p class="text-gray-700">
+                A Tech Enthusiast, passionate about stock market, economy and
+                finance. Trustworthy, enthusiastic, and always eager to learn.
+              </p>
+              <div
+                class="flex justify-center md:justify-start space-x-4 text-green-700 text-xl"
+              >
+                <a href="mailto:alshahoriar.hossain@gmail.com"
+                  ><i class="fas fa-envelope"></i
+                ></a>
+                <a
+                  href="https://www.linkedin.com/in/shahoriarhossain/"
+                  target="_blank"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+                <a
+                  href="https://www.facebook.com/alshahoriar.hossain"
+                  target="_blank"
+                  ><i class="fab fa-facebook"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tasnuva - left image -->
+          <div
+            class="flex flex-col md:flex-row items-center glass rounded-3xl p-6 shadow-xl"
+          >
+            <div class="md:w-1/2 mb-6 md:mb-0">
+              <img
+                src="./assets/images/tasnuvajahanlamiya.jpeg"
+                alt="Tasnuva"
+                class="team-img"
+              />
+            </div>
+            <div class="md:w-1/2 text-center md:text-left space-y-3">
+              <h2 class="text-2xl font-bold text-green-800">
+                TASNUVA JAHAN LAMIYA
+              </h2>
+              <p class="text-sm text-gray-600">Finance & Strategy Lead</p>
+              <p class="text-gray-700">
+                A startup dreamer and finance major focused on solving
+                meaningful problems. Passionate, optimistic, and growth-minded.
+              </p>
+              <div
+                class="flex justify-center md:justify-start space-x-4 text-green-700 text-xl"
+              >
+                <a href="mailto:tasnuvajahanlamiya@gmail.com"
+                  ><i class="fas fa-envelope"></i
+                ></a>
+                <a
+                  href="https://www.linkedin.com/in/tasnuva-jahan-lamiya/"
+                  target="_blank"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+                <a
+                  href="https://www.facebook.com/tasnuvajahan.alwaysunknown"
+                  target="_blank"
+                  ><i class="fab fa-facebook"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Saddi - right image -->
+          <div
+            class="flex flex-col md:flex-row-reverse items-center glass rounded-3xl p-6 shadow-xl"
+          >
+            <div class="md:w-1/2 mb-6 md:mb-0">
+              <img
+                src="./assets/images/mdsajidhossainsaddi.png"
+                alt="Saddi"
+                class="team-img"
+              />
+            </div>
+            <div class="md:w-1/2 text-center md:text-left space-y-3">
+              <h2 class="text-2xl font-bold text-green-800">
+                MD SAJID HOSSAIN SADDI
+              </h2>
+              <p class="text-sm text-gray-600">
+                Agriculture & Field Operations Lead
+              </p>
+              <p class="text-gray-700">
+                Inspired by farmers and food systems, driven to disrupt the
+                agriculture industry for good. Bold, passionate, and
+                impact-focused.
+              </p>
+              <div
+                class="flex justify-center md:justify-start space-x-4 text-green-700 text-xl"
+              >
+                <a href="mailto:saddya30spro@gmail.com"
+                  ><i class="fas fa-envelope"></i
+                ></a>
+                <a
+                  href="https://www.facebook.com/profile.php?id=100011429589312"
+                  target="_blank"
+                  ><i class="fab fa-facebook"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <!-- Shahar - left image -->
+          <div
+            class="flex flex-col md:flex-row items-center glass rounded-3xl p-6 shadow-xl"
+          >
+            <div class="md:w-1/2 mb-6 md:mb-0">
+              <img
+                src="./assets/images/mdshaharshitol.jpg"
+                alt="Shahar"
+                class="team-img"
+              />
+            </div>
+            <div class="md:w-1/2 text-center md:text-left space-y-3">
+              <h2 class="text-2xl font-bold text-green-800">
+                MD SHAHAR SHITOL
+              </h2>
+              <p class="text-sm text-gray-600">Platform & Technology Lead</p>
+              <p class="text-gray-700">
+                Builder of Bhorosha’s tech. Business-brained and code-powered.
+                Passionate about scalable impact, clean design, and real-world
+                problem solving.
+              </p>
+              <div
+                class="flex justify-center md:justify-start space-x-4 text-green-700 text-xl"
+              >
+                <a href="mailto:mdsaharshitol@gmail.com"
+                  ><i class="fas fa-envelope"></i
+                ></a>
+                <a
+                  href="https://www.linkedin.com/in/mdshaharshitol/"
+                  target="_blank"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+                <a href="https://www.facebook.com/saharshital" target="_blank"
+                  ><i class="fab fa-facebook"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

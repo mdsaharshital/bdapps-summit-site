@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms & Conditions | Bhorosha</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./assets/images/logo.png" type="image/png" />
+    <meta
+      name="description"
+      content="Bhorosha - Land leasing made simple for Bangladesh."
+    />
+    <meta property="og:image" content="./assets/images/dashboardFarmer.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link href="./assets/css/style.css" rel="stylesheet" />
+    <link rel="icon" href="./assets/images/logo.png" />
+    <style>
+      .spinner {
+        border: 4px solid rgba(0, 0, 0, 0.1);
+        border-top-color: #10b981;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        animation: spin 0.5s linear infinite;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      :root {
+        --deep-green: #073a2d;
+        --light-green: #b3d745;
+      }
+      .text-deep-green {
+        color: var(--deep-green);
+      }
+      .bg-deep-green {
+        background-color: var(--deep-green);
+      }
+      .bg-light-green {
+        background-color: var(--light-green);
+      }
+      .text-light-green {
+        color: var(--light-green);
+      }
+    </style>
+  </head>
+  <body class="">
+    <!-- Header -->
+    <header
+      class="shadow-md sticky top-0 z-50"
+      style="background-color: var(--deep-green)"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 flex items-center justify-between py-3 text-white"
+      >
+        <!-- Logo + Name -->
+        <a href="/">
+          <div class="flex items-center gap-3">
+            <img
+              src="./assets/images/Bhorosha Logo.png"
+              alt="Bhorosha Logo"
+              class="h-12 w-auto max-h-14"
+            />
+            <span class="text-2xl font-extrabold tracking-wide text-[#b3d745]"
+              >Bhorosha</span
+            >
+          </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+          <a href="#services" class="hover:text-[#b3d745] transition"
+            >Our Services</a
+          >
+          <a href="#how" class="hover:text-[#b3d745] transition">How We Work</a>
+          <a href="/teamSection.html" class="hover:text-[#b3d745] transition"
+            >About Us</a
+          >
+          <a
+            style="color: #b3d745"
+            href="landlist-form.html"
+            class="hover:text-[#b3d745] transition"
+            >List Your land</a
+          >
+        </nav>
+
+        <!-- Mobile Hamburger -->
+        <button id="mobile-menu-toggle" class="md:hidden text-xl">☰</button>
+
+        <!-- CTA -->
+        <a
+          href="login.html"
+          class="hidden md:inline-block px-4 py-2 rounded-full text-sm font-semibold shadow hover:scale-105 transition"
+          style="background-color: var(--light-green); color: var(--deep-green)"
+        >
+          Client Login
+        </a>
+      </div>
+
+      <!-- Mobile Nav Dropdown -->
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden flex-col bg-[#073a2d] text-white px-4 py-4 space-y-3"
+      >
+        <a href="#services" class="block hover:text-[#b3d745]">Our Services</a>
+        <a href="#how" class="block hover:text-[#b3d745]">How We Work</a>
+        <a
+          href="/teamSection.html"
+          class="block hover:text-[#b3d745] transition"
+          >About Us</a
+        ><a
+          style="color: #b3d745"
+          href="landlist-form.html"
+          class="block transition"
+          >List Your land</a
+        ><a
+          href="login.html"
+          class="inline-block btn-primary px-4 py-2 rounded-full text-sm font-semibold mt-2"
+        >
+          Client Login
+        </a>
+      </div>
+    </header>
+
+    <!-- Script to toggle mobile nav -->
+    <script>
+      // Wait for the DOM to load completely
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggle = document.getElementById("mobile-menu-toggle");
+        const menu = document.getElementById("mobile-menu");
+
+        // Debug: Ensure the elements are selected
+        console.log(toggle, menu);
+
+        toggle.addEventListener("click", () => {
+          // Toggle the 'hidden' class on the mobile menu
+          menu.classList.toggle("hidden");
+        });
+      });
+    </script>
+    <div class="max-w-4xl mx-auto px-4 py-20 space-y-8">
+      <header>
+        <h1 class="text-3xl font-bold text-green-700 text-center">
+          📄 Terms & Conditions / শর্তাবলী
+        </h1>
+      </header>
+      <div class="bg-gray-50 text-gray-800">
+        <section class="space-y-4">
+          <h2 class="text-xl font-semibold text-green-600">
+            📘 English Version
+          </h2>
+          <ol class="list-decimal list-inside space-y-2">
+            <li>
+              <strong>Acceptance of Terms:</strong> By accessing or using the
+              Bhorosha platform, you agree to be bound by these Terms and
+              applicable laws of Bangladesh.
+            </li>
+            <li>
+              <strong>Role of Bhorosha:</strong> Bhorosha is only a digital
+              intermediary. We do not own, manage, inspect, or lease land. We
+              connect parties and may optionally act as a neutral witness if
+              both parties agree.
+            </li>
+            <li>
+              <strong>No Liability in Post-Deal Outcomes:</strong> We are not
+              responsible for land use, disputes, or outcomes after a lease is
+              finalized. Users should conduct due diligence and seek legal
+              support independently.
+            </li>
+            <li>
+              <strong>Verification and Content Accuracy:</strong> Bhorosha does
+              not verify listings. All information is user-submitted and their
+              responsibility.
+            </li>
+            <li>
+              <strong>Service Fees and Optional Services:</strong> Some services
+              are paid. Fees are disclosed, and refunds are not guaranteed after
+              delivery.
+            </li>
+            <li>
+              <strong>User Conduct:</strong> Users must not post
+              illegal/fraudulent listings, misrepresent ownership, or bypass the
+              platform.
+            </li>
+            <li>
+              <strong>Governing Law:</strong> Terms follow the laws of
+              Bangladesh including the Contract Act 1872 and Transfer of
+              Property Act 1882.
+            </li>
+            <li>
+              <strong>Dispute Resolution:</strong> Bhorosha is not liable to
+              mediate. Users should pursue legal remedies via courts or
+              arbitration.
+            </li>
+            <li>
+              <strong>Modifications:</strong> Terms may change. Continued use
+              implies acceptance.
+            </li>
+          </ol>
+        </section>
+
+        <hr class="my-6 border-gray-300" />
+
+        <section class="space-y-4">
+          <h2 class="text-xl font-semibold text-green-600">📕 বাংলা সংস্করণ</h2>
+          <ol class="list-decimal list-inside space-y-2">
+            <li>
+              <strong>শর্তাবলীর গ্রহণযোগ্যতা:</strong> ভরসা প্ল্যাটফর্ম ব্যবহার
+              করে আপনি বাংলাদেশের প্রচলিত আইন অনুযায়ী এই শর্তাবলী মেনে নিচ্ছেন।
+            </li>
+            <li>
+              <strong>ভরসার ভূমিকা:</strong> ভরসা শুধুমাত্র সংযোগ মাধ্যম। আমরা
+              জমি মালিকানা করি না বা চাষ করি না। উভয় পক্ষ চাইলে সাক্ষী হিসেবে
+              থাকতে পারি।
+            </li>
+            <li>
+              <strong>চুক্তির পর দায়বদ্ধতা:</strong> চুক্তির পর জমির ব্যবহার বা
+              বিরোধের জন্য ভরসা দায়ী নয়। উভয় পক্ষকে আইনি সহায়তা নিতে উৎসাহিত
+              করা হয়।
+            </li>
+            <li>
+              <strong>তথ্য যাচাই:</strong> জমি বা তথ্য যাচাই ভরসা করে না। সব
+              তথ্য ব্যবহারকারীর দায়িত্বে।
+            </li>
+            <li>
+              <strong>সেবা ফি:</strong> কিছু সেবা পেইড, যেমন প্রিমিয়াম লিস্টিং।
+              ফি পরিশোধের পর রিফান্ড প্রযোজ্য নয়।
+            </li>
+            <li>
+              <strong>ব্যবহারকারীর আচরণ:</strong> অবৈধ লিস্টিং, প্রতারণা, বা
+              প্ল্যাটফর্ম বাইপাস নিষিদ্ধ।
+            </li>
+            <li>
+              <strong>আইন:</strong> এই শর্তাবলী বাংলাদেশে প্রচলিত আইন অনুসারে
+              পরিচালিত হবে।
+            </li>
+            <li>
+              <strong>বিরোধ নিষ্পত্তি:</strong> ভরসা সালিশ বা আদালতের পরিবর্তে
+              নয়। আইনগত সহায়তা গ্রহণ করুন।
+            </li>
+            <li>
+              <strong>পরিবর্তন:</strong> শর্তাবলী সময়ে সময়ে পরিবর্তিত হতে
+              পারে।
+            </li>
+          </ol>
+        </section>
+
+        <footer class="text-center text-sm text-gray-500 pt-8">
+          &copy; 2025 Bhorosha Platform. All rights reserved.
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Land Listing</title>
+    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./assets/images/logo.png" type="image/png" />
+    <meta
+      name="description"
+      content="Bhorosha - Land leasing made simple for Bangladesh."
+    />
+    <meta property="og:image" content="./assets/images/dashboardFarmer.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link href="./assets/css/style.css" rel="stylesheet" />
+    <link rel="icon" href="./assets/images/logo.png" />
+    <style>
+      .spinner {
+        border: 4px solid rgba(0, 0, 0, 0.1);
+        border-top-color: #10b981;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        animation: spin 0.5s linear infinite;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      :root {
+        --deep-green: #073a2d;
+        --light-green: #b3d745;
+      }
+      .text-deep-green {
+        color: var(--deep-green);
+      }
+      .bg-deep-green {
+        background-color: var(--deep-green);
+      }
+      .bg-light-green {
+        background-color: var(--light-green);
+      }
+      .text-light-green {
+        color: var(--light-green);
+      }
+    </style>
+  </head>
+  <body class="">
+    <!-- Header -->
+    <header
+      class="shadow-md sticky top-0 z-50"
+      style="background-color: var(--deep-green)"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 flex items-center justify-between py-3 text-white"
+      >
+        <!-- Logo + Name -->
+        <a href="/">
+          <div class="flex items-center gap-3">
+            <img
+              src="./assets/images/Bhorosha Logo.png"
+              alt="Bhorosha Logo"
+              class="h-12 w-auto max-h-14"
+            />
+            <span class="text-2xl font-extrabold tracking-wide text-[#b3d745]"
+              >Bhorosha</span
+            >
+          </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+          <a href="#services" class="hover:text-[#b3d745] transition"
+            >Our Services</a
+          >
+          <a href="#how" class="hover:text-[#b3d745] transition">How We Work</a>
+          <a href="/teamSection.html" class="hover:text-[#b3d745] transition"
+            >About Us</a
+          ><a
+            style="color: #b3d745"
+            href="landlist-form.html"
+            class="hover:text-[#b3d745] transition"
+            >List Your land</a
+          >
+        </nav>
+
+        <!-- Mobile Hamburger -->
+        <button id="mobile-menu-toggle" class="md:hidden text-xl">☰</button>
+
+        <!-- CTA -->
+        <a
+          href="login.html"
+          class="hidden md:inline-block px-4 py-2 rounded-full text-sm font-semibold shadow hover:scale-105 transition"
+          style="background-color: var(--light-green); color: var(--deep-green)"
+        >
+          Client Login
+        </a>
+      </div>
+
+      <!-- Mobile Nav Dropdown -->
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden flex-col bg-[#073a2d] text-white px-4 py-4 space-y-3"
+      >
+        <a href="#services" class="block hover:text-[#b3d745]">Our Services</a>
+        <a href="#how" class="block hover:text-[#b3d745]">How We Work</a>
+        <a
+          href="/teamSection.html"
+          class="block hover:text-[#b3d745] transition"
+          >About Us</a
+        ><a
+          style="color: #b3d745"
+          href="landlist-form.html"
+          class="block transition"
+          >List Your land</a
+        >
+        <a
+          href="login.html"
+          class="inline-block btn-primary px-4 py-2 rounded-full text-sm font-semibold mt-2"
+        >
+          Client Login
+        </a>
+      </div>
+    </header>
+
+    <!-- Script to toggle mobile nav -->
+    <script>
+      // Wait for the DOM to load completely
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggle = document.getElementById("mobile-menu-toggle");
+        const menu = document.getElementById("mobile-menu");
+
+        // Debug: Ensure the elements are selected
+        console.log(toggle, menu);
+
+        toggle.addEventListener("click", () => {
+          // Toggle the 'hidden' class on the mobile menu
+          menu.classList.toggle("hidden");
+        });
+      });
+    </script>
+    <div class="bg-gray-100 p-4 min-h-screen flex justify-center items-start">
+      <div class="bg-white w-full max-w-xl p-6 rounded-2xl shadow space-y-4">
+        <h2 class="text-2xl font-bold text-green-800 text-center">
+          🌾 জমি তালিকাভুক্তি ফর্ম / Land Listing Form
+        </h2>
+
+        <form id="landForm" class="space-y-4">
+          <input
+            name="name"
+            placeholder="👤 আপনার নাম / Your Name*"
+            required
+            class="w-full px-4 py-2 border rounded-lg"
+          />
+          <input
+            name="contact"
+            placeholder="📞 মোবাইল নাম্বার / Contact Number*"
+            required
+            class="w-full px-4 py-2 border rounded-lg"
+          />
+          <input
+            name="email"
+            placeholder="📧 ইমেইল (ঐচ্ছিক) / Email (optional)"
+            class="w-full px-4 py-2 border rounded-lg"
+          />
+
+          <div>
+            <select
+              id="division"
+              required
+              class="w-full border rounded-lg px-3 py-2 mb-2"
+            >
+              <option value="">
+                📍 বিভাগ নির্বাচন করুন / Select Division*
+              </option>
+            </select>
+            <select
+              id="district"
+              required
+              class="w-full border rounded-lg px-3 py-2 mb-2"
+            >
+              <option value="">🌆 জেলা নির্বাচন করুন / Select District*</option>
+            </select>
+            <select
+              id="upazila"
+              required
+              class="w-full border rounded-lg px-3 py-2 mb-2"
+            >
+              <option value="">
+                🏣 উপজেলা নির্বাচন করুন / Select Upazila*
+              </option>
+            </select>
+            <select id="union" class="w-full border rounded-lg px-3 py-2">
+              <option value="">
+                🧽 ইউনিয়ন (ঐচ্ছিক) / Select Union (optional)
+              </option>
+            </select>
+          </div>
+
+          <input
+            name="addressLine"
+            placeholder="📜 বিস্তারিত ঠিকানা (গ্রাম, রোড নং ইত্যাদি) / Additional Address Info"
+            class="w-full px-4 py-2 border rounded-lg"
+          />
+
+          <input
+            type="number"
+            name="lease"
+            placeholder="📆 ইজারা মেয়াদ (মাস)* / Leasing Period (months)*"
+            min="6"
+            required
+            class="w-full px-4 py-2 border rounded-lg"
+          />
+          <input
+            type="number"
+            name="money"
+            placeholder="💰 চাহিদা (BDT)* / Asking Price (BDT)*"
+            required
+            class="w-full px-4 py-2 border rounded-lg"
+          />
+
+          <label class="flex items-start space-x-2 text-sm">
+            <input type="checkbox" required class="mt-1 text-green-600" />
+            <span
+              >আমি
+              <a href="#" class="text-green-600 underline">শর্তাবলী</a> মেনে
+              নিচ্ছি / I agree to the
+              <a href="#" class="text-green-600 underline"
+                >Terms & Conditions</a
+              ></span
+            >
+          </label>
+
+          <div id="loader" class="flex justify-center hidden">
+            <div class="spinner"></div>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-green-700 hover:bg-green-800 text-white py-2 rounded-lg font-medium"
+          >
+            📩 সাবমিট করুন / Submit
+          </button>
+        </form>
+      </div>
+    </div>
+    <script>
+      const API = "https://bdapi.vercel.app/api/v.1";
+      const divisionEl = document.getElementById("division");
+      const districtEl = document.getElementById("district");
+      const upazilaEl = document.getElementById("upazila");
+      const unionEl = document.getElementById("union");
+      const loader = document.getElementById("loader");
+
+      let selectedDivision = {},
+        selectedDistrict = {},
+        selectedUpazila = {},
+        selectedUnion = {};
+
+      fetch(`${API}/division`)
+        .then((res) => res.json())
+        .then(({ data }) => {
+          data.forEach((div) => {
+            divisionEl.innerHTML += `<option value="${div.id}" data-name="${div.bn_name}">${div.bn_name}</option>`;
+          });
+        });
+
+      divisionEl.addEventListener("change", () => {
+        const id = divisionEl.value;
+        const name = divisionEl.options[divisionEl.selectedIndex].dataset.name;
+        selectedDivision = { id, name };
+
+        districtEl.innerHTML = `<option value="">🌆 জেলা নির্বাচন করুন / Select District*</option>`;
+        upazilaEl.innerHTML = `<option value="">🏣 উপজেলা নির্বাচন করুন / Select Upazila*</option>`;
+        unionEl.innerHTML = `<option value="">🧽 ইউনিয়ন / Union (optional)</option>`;
+
+        if (!id) return;
+        fetch(`${API}/district/${id}`)
+          .then((res) => res.json())
+          .then(({ data }) => {
+            data.forEach((d) => {
+              districtEl.innerHTML += `<option value="${d.id}" data-name="${d.bn_name}">${d.bn_name}</option>`;
+            });
+          });
+      });
+
+      districtEl.addEventListener("change", () => {
+        const id = districtEl.value;
+        const name = districtEl.options[districtEl.selectedIndex].dataset.name;
+        selectedDistrict = { id, name };
+
+        upazilaEl.innerHTML = `<option value="">🏣 উপজেলা নির্বাচন করুন / Select Upazila*</option>`;
+        unionEl.innerHTML = `<option value="">🧽 ইউনিয়ন / Union (optional)</option>`;
+
+        if (!id) return;
+        fetch(`${API}/upazilla/${id}`)
+          .then((res) => res.json())
+          .then(({ data }) => {
+            data.forEach((u) => {
+              upazilaEl.innerHTML += `<option value="${u.id}" data-name="${u.bn_name}">${u.bn_name}</option>`;
+            });
+          });
+      });
+
+      upazilaEl.addEventListener("change", () => {
+        const id = upazilaEl.value;
+        const name = upazilaEl.options[upazilaEl.selectedIndex].dataset.name;
+        selectedUpazila = { id, name };
+
+        unionEl.innerHTML = `<option value="">🧽 ইউনিয়ন / Union (optional)</option>`;
+        if (!id) return;
+        fetch(`${API}/union/${id}`)
+          .then((res) => res.json())
+          .then(({ data }) => {
+            data.forEach((u) => {
+              unionEl.innerHTML += `<option value="${u.name_en}" data-name="${u.bn_name}">${u.bn_name}</option>`;
+            });
+          });
+      });
+
+      unionEl.addEventListener("change", () => {
+        selectedUnion = {
+          name: unionEl.options[unionEl.selectedIndex]?.dataset.name || "",
+          id: unionEl.value || "",
+        };
+      });
+
+      document
+        .getElementById("landForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          loader.classList.remove("hidden");
+          const form = this;
+          const formData = Object.fromEntries(new FormData(form).entries());
+          formData.id = uuidv4();
+
+          formData.location = {
+            division: selectedDivision,
+            district: selectedDistrict,
+            upazila: selectedUpazila,
+            union: selectedUnion,
+            addressLine: formData.addressLine || "",
+          };
+
+          delete formData.division;
+          delete formData.district;
+          delete formData.upazila;
+          delete formData.union;
+          delete formData.addressLine;
+
+          const saved = JSON.parse(localStorage.getItem("landList") || "[]");
+          saved.push(formData);
+          localStorage.setItem("landList", JSON.stringify(saved));
+
+          setTimeout(() => {
+            loader.classList.add("hidden");
+            alert(`✅ সংরক্ষণ করা হয়েছে! আপনার আইডি: ${formData.id}`);
+            form.reset();
+          }, 500);
+        });
+    </script>
+  </body>
+</html>
